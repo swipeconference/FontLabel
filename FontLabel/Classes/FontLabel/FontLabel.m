@@ -100,7 +100,8 @@
 				if (size.width > origSize.width) {
 					CGFloat desiredRatio = (origSize.width * actualFont.ratio) / size.width;
 					CGFloat desiredPointSize = desiredRatio * actualFont.pointSize / actualFont.ratio;
-					actualFont = [actualFont fontWithSize:MAX(MAX(desiredPointSize, self.minimumFontSize), 1.0f)];
+                    CGFloat pointSize = MAX(desiredPointSize, self.minimumFontSize);
+					actualFont = [actualFont fontWithSize:MAX(pointSize, 1.0f)];
 					size = [self.text sizeWithZFont:actualFont];
 				}
 				if (!CGSizeEqualToSize(origSize, size)) {

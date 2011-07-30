@@ -283,7 +283,7 @@
 	} else if (NSMaxRange(rangeLimit) > [_buffer length]) {
 		@throw [NSException exceptionWithName:NSRangeException reason:@"rangeLimit beyond range of attributed string" userInfo:nil];
 	}
-	NSUInteger runIndex = [self indexOfEffectiveAttributeRunForIndex:index];
+	NSInteger runIndex = [self indexOfEffectiveAttributeRunForIndex:index];
 	ZAttributeRun *run = [_attributes objectAtIndex:runIndex];
 	if (aRange != NULL) {
 		if (attributeName != nil) {
